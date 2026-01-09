@@ -1,6 +1,5 @@
+import { UnderConstructionDialog } from "@/components/under-construction-dialog";
+
 export default function Home() {
-  return (
-    <div className="">
-    </div>
-  );
+  return <UnderConstructionDialog />;
 }

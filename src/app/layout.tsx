@@ -1,9 +1,10 @@
+import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Montserrat } from "next/font/google";
-import "./globals.css";
 import { Navbar } from "@/components/navbar";
+import { Provider } from "@/components/Provider";
 
 const font = Montserrat({
   variable: "--font-montserrat",
@@ -51,19 +52,17 @@ export function generateViewport(): Viewport {
   };
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body className={font.variable}>
         <main className="w-full md:w-4/5 mx-auto">
+          <Provider>
             <Navbar />
             {children}
             <Analytics />
             <SpeedInsights />
+          </Provider>
         </main>
 
       </body>

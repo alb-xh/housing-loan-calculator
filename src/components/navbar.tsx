@@ -70,7 +70,7 @@ export function Navbar() {
               height={32}
               alt="Logo"
             />
-            <span className="font-semibold ">Llogaritkredi.al</span>
+            <span className="font-semibold">Llogaritkredi.al</span>
           </div>
         </NavigationMenuItem>
       </NavigationMenuList>

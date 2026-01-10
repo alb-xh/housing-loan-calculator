@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Viewport } from "next";
+import Head from "next/head";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Montserrat } from "next/font/google";
@@ -30,7 +31,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={font.variable}>
         <main className="w-full md:w-4/5 mx-auto">
           <Provider>
-            <Title />
+            <Head>
+              <Title />
+            </Head>
             <Navbar />
             {children}
             <Analytics />

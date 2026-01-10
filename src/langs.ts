@@ -1,25 +1,29 @@
 export type Language = 'al' | 'en';
 
 export type LanguageContent = {
+  title: string,
   underConstruction: {
     message: string
   },
 };
 
+export const DEFAULT_LANGUAGE: Language = 'al';
+
 export const al: LanguageContent = {
+  title: 'Kalkulatori i Kredive për Banesa',
   underConstruction: {
     message: 'Nën zhvillim',
   },
 };
 
 export const en: LanguageContent = {
+  title: 'Home Loan Calculator',
   underConstruction: {
     message: 'Under construction',
   },
 };
 
-export const all: Record<Language, LanguageContent> = { 
+export const langs: Record<Language, LanguageContent> = { 
   en, 
   al 
 };
-

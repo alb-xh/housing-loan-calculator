@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { langs } from "./langs";
-import { DEFAULT_LANGUAGE } from "./contexts/defaults";
+import { DEFAULT_LANGUAGE, langs } from "./langs";
 
 export const metadata: Metadata = {
   title: langs[DEFAULT_LANGUAGE].title,

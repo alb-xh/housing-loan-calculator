@@ -7,6 +7,8 @@ export type LanguageContent = {
   },
 };
 
+export const DEFAULT_LANGUAGE: Language = 'al';
+
 export const al: LanguageContent = {
   title: 'Kalkulatori i Kredive për Banesa',
   underConstruction: {

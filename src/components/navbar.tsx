@@ -1,13 +1,19 @@
 "use client";
 
-import { Sun } from "lucide-react";
+import { Sun, Moon } from "lucide-react";
 import Image from "next/image";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useTheme } from "@/hooks/use-theme";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { Button } from "./ui/button";
 
 export function Navbar() {
   const isMobile = useIsMobile();
+  const { theme, setTheme } = useTheme();
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
   return (
     <NavigationMenu className="w-full max-w-none justify-between pb-0.5 border-b-2" viewport={isMobile}>
@@ -27,8 +33,8 @@ export function Navbar() {
       </NavigationMenuList>
       <NavigationMenuList className="flex-wrap">
         <NavigationMenuItem>
-          <Button size="icon" aria-label="Submit" variant="ghost">
-            <Sun />
+          <Button size="icon" aria-label="Submit" variant="ghost" onClick={toggleTheme}>
+            {theme === 'light' ? < Sun /> : <Moon />}
           </Button>
         </NavigationMenuItem>
       </NavigationMenuList>

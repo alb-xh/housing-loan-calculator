@@ -1,6 +1,9 @@
 import { createContext } from 'react';
-import type { Language } from '@/langs';
 
-type ContextValue = [Language, (language: Language) => void];
+export type Language = 'al' | 'en';
+export type LanguageContextValue = {
+  language: Language, 
+  setLanguage: (language: Language) => void
+};
 
-export const LanguageContext = createContext<ContextValue>({} as ContextValue);
+export const LanguageContext = createContext<LanguageContextValue>({} as LanguageContextValue);

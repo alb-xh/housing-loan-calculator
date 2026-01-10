@@ -4,6 +4,6 @@ import { get } from "@/lib/utils";
 import { useLang } from "./use-lang";
 
 export const useTranslation = () => {
-  const [lang] = useLang();
-  return useCallback((key: string) => get(langs[lang], key, ''), [ lang ]);
+  const { language } = useLang();
+  return useCallback((key: string) => get(langs[language], key, ''), [ language ]);
 };

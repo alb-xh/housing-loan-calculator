@@ -1,5 +1,10 @@
+import { isProd } from "@/env";
 import { UnderConstructionDialog } from "@/components/under-construction-dialog";
 
 export default function Home() {
-  return <UnderConstructionDialog />;
+  return (
+    <>
+    {isProd && <UnderConstructionDialog />}
+    </>
+  );
 }

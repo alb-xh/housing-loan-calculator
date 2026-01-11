@@ -1,5 +1,5 @@
 "use client";
-import { Sun, Moon, Languages } from "lucide-react";
+import { Sun, Moon, Languages, Coffee, Coins } from "lucide-react";
 import Image from "next/image";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useTheme } from "@/hooks/use-theme";
@@ -15,7 +15,9 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { useLang } from "@/hooks/use-lang";
 import { ComponentProps, PropsWithChildren } from "react";
-import { Language } from "@/contexts/language-context";
+import type { Language } from "@/contexts/language-context";
+import type { Currency } from "@/contexts/currency-context";
+import { useCurrency } from "@/hooks/use-currency";
 
 function Logo () {
   return (
@@ -44,6 +46,46 @@ function NavButton ({ children, ...rest }: ComponentProps<typeof Button>) {
       {children}
     </Button>
   )
+};
+
+export function CurrencyMenuItem ({ cur, children }: PropsWithChildren<{ cur: Currency }>) {
+  const { currency, setCurrency } = useCurrency();
+  const isActive = currency === cur;
+  const handleOnSelect = (e: Event) => {
+    e.preventDefault();
+    if (!isActive) setCurrency(cur);
+  }
+  
+  return (
+    <DropdownMenuItem 
+      className={`flex justify-center${!isActive && ' opacity-50 hover:opacity-100'}`}
+      onSelect={handleOnSelect}
+    >
+      {children}
+    </DropdownMenuItem>
+  );
+};
+
+export function CurrencySelector() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <NavButton>
+          <Coins />
+        </NavButton>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="min-w-0" align="center">
+        <DropdownMenuGroup >
+          <CurrencyMenuItem cur="LEK">
+            LEK
+          </CurrencyMenuItem>
+          <CurrencyMenuItem cur="EUR">
+            EUR
+          </CurrencyMenuItem>
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
 };
 
 export function LanguageMenuItem ({ lang, children }: PropsWithChildren<{ lang: Language }>) {
@@ -100,6 +142,15 @@ function ThemeToggler () {
   );
 };
 
+function CoffeeDialog () {
+  return (
+    <NavButton disabled={true}>
+      <Coffee />
+    </NavButton>
+  );
+};
+
+
 export function Navbar() {
   const isMobile = useIsMobile();
 
@@ -112,7 +163,13 @@ export function Navbar() {
       </NavigationMenuList>
       <ClientRender>
         <NavigationMenuList className="flex-wrap ">
-          <NavigationMenuItem  className="focus-visible:ring-0 focus-visible:outline-none">
+          <NavigationMenuItem>
+            <CoffeeDialog />
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <CurrencySelector />
+          </NavigationMenuItem>
+          <NavigationMenuItem>
             <LanguageSelector />
           </NavigationMenuItem>
           <NavigationMenuItem>

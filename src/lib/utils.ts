@@ -12,3 +12,20 @@ export const get = (obj: Record<string, unknown>, key: string, defaultValue: any
 
   return result ?? defaultValue;
 };
+
+export const stateful = <Args extends any[], R>(cb: (...args: Args) => Promise<R>) => {
+  const state = {
+    isRunning: false,
+    async fn(...args: Args): Promise<R> {
+      state.isRunning = true;
+
+      try {
+        return await cb(...args);
+      } finally {
+        state.isRunning = false;
+      }
+    }
+  };
+
+  return state;
+}

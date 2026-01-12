@@ -1,0 +1,163 @@
+{
+  "updatedAt": "2026-01-01T18:15:18.297937Z",
+  "banks": [
+    {
+      "code": "ABI",
+      "name": "American Bank of Investment (Albania)",
+      "interestNorms": [
+        { "months": { "start": 0, "end": 12 }, "rate": 10.37 },
+        { "months": { "start": 13, "end": 24 }, "rate": 9.39 },
+        { "months": { "start": 25, "end": 36 }, "rate": 9.04 },
+        { "months": { "start": 37, "end": 48 }, "rate": 8.86 },
+        { "months": { "start": 49, "end": 60 }, "rate": 8.75 },
+        { "months": { "start": 61, "end": 72 }, "rate": 8.67 },
+        { "months": { "start": 73, "end": 84 }, "rate": 8.61 },
+        { "months": { "start": 85, "end": 96 }, "rate": 8.56 },
+        { "months": { "start": 97, "end": 108 }, "rate": 8.52 },
+        { "months": { "start": 109, "end": 120 }, "rate": 8.49 },
+        { "months": { "start": 121, "end": 180 }, "rate": 8.39 },
+        { "months": { "start": 181, "end": 240 }, "rate": 8.33 },
+        { "months": { "start": 241, "end": 360 }, "rate": 8.26 }
+      ]
+    },
+    {
+      "code": "CB",
+      "name": "Credins Bank",
+      "interestNorms": [
+        { "months": { "start": 0, "end": 12 }, "rate": 6.56 }
+      ]
+    },
+    {
+      "code": "FIB",
+      "name": "First Investment Bank Albania",
+      "interestNorms": [
+        { "months": { "start": 0, "end": 12 }, "rate": 4.65 },
+        { "months": { "start": 13, "end": 24 }, "rate": 4.56 },
+        { "months": { "start": 25, "end": 36 }, "rate": 4.41 },
+        { "months": { "start": 37, "end": 48 }, "rate": 4.49 },
+        { "months": { "start": 49, "end": 60 }, "rate": 4.59 },
+        { "months": { "start": 61, "end": 72 }, "rate": 4.68 },
+        { "months": { "start": 73, "end": 84 }, "rate": 4.76 },
+        { "months": { "start": 85, "end": 96 }, "rate": 4.82 },
+        { "months": { "start": 97, "end": 108 }, "rate": 4.88 },
+        { "months": { "start": 109, "end": 120 }, "rate": 4.93 },
+        { "months": { "start": 121, "end": 180 }, "rate": 5.09 },
+        { "months": { "start": 181, "end": 240 }, "rate": 5.19 },
+        { "months": { "start": 241, "end": 360 }, "rate": 5.33 }
+      ]
+    },
+    {
+      "code": "ISB",
+      "name": "Intesa Sanpaolo Bank of Albania",
+      "interestNorms": [
+        { "months": { "start": 49, "end": 60 }, "rate": 10.06 },
+        { "months": { "start": 61, "end": 72 }, "rate": 9.88 },
+        { "months": { "start": 73, "end": 84 }, "rate": 9.76 },
+        { "months": { "start": 85, "end": 96 }, "rate": 9.67 },
+        { "months": { "start": 97, "end": 108 }, "rate": 9.60 },
+        { "months": { "start": 109, "end": 120 }, "rate": 9.55 },
+        { "months": { "start": 121, "end": 180 }, "rate": 9.44 },
+        { "months": { "start": 181, "end": 240 }, "rate": 9.42 },
+        { "months": { "start": 241, "end": 360 }, "rate": 9.52 }
+      ]
+    },
+    {
+      "code": "NCB",
+      "name": "National Commercial Bank",
+      "interestNorms": [
+        { "months": { "start": 73, "end": 84 }, "rate": 5.39 },
+        { "months": { "start": 121, "end": 180 }, "rate": 5.67 },
+        { "months": { "start": 241, "end": 360 }, "rate": 5.54 }
+      ]
+    },
+    {
+      "code": "OTP",
+      "name": "OTP Bank Albania",
+      "interestNorms": [
+        { "months": { "start": 0, "end": 12 }, "rate": 4.77 },
+        { "months": { "start": 13, "end": 24 }, "rate": 4.48 },
+        { "months": { "start": 25, "end": 36 }, "rate": 4.17 },
+        { "months": { "start": 37, "end": 48 }, "rate": 6.20 },
+        { "months": { "start": 49, "end": 60 }, "rate": 6.11 },
+        { "months": { "start": 61, "end": 72 }, "rate": 6.04 },
+        { "months": { "start": 73, "end": 84 }, "rate": 5.99 },
+        { "months": { "start": 85, "end": 96 }, "rate": 5.96 },
+        { "months": { "start": 97, "end": 108 }, "rate": 5.93 },
+        { "months": { "start": 109, "end": 120 }, "rate": 5.91 },
+        { "months": { "start": 121, "end": 180 }, "rate": 5.85 },
+        { "months": { "start": 181, "end": 240 }, "rate": 5.81 },
+        { "months": { "start": 241, "end": 360 }, "rate": 5.78 }
+      ]
+    },
+    {
+      "code": "PCB",
+      "name": "Procredit Bank",
+      "interestNorms": [
+        { "months": { "start": 0, "end": 12 }, "rate": 4.97 },
+        { "months": { "start": 13, "end": 24 }, "rate": 7.56 },
+        { "months": { "start": 25, "end": 36 }, "rate": 7.40 },
+        { "months": { "start": 37, "end": 48 }, "rate": 7.32 },
+        { "months": { "start": 49, "end": 60 }, "rate": 7.27 },
+        { "months": { "start": 61, "end": 72 }, "rate": 7.23 },
+        { "months": { "start": 73, "end": 84 }, "rate": 7.21 },
+        { "months": { "start": 85, "end": 96 }, "rate": 7.19 },
+        { "months": { "start": 97, "end": 108 }, "rate": 7.18 },
+        { "months": { "start": 109, "end": 120 }, "rate": 7.17 },
+        { "months": { "start": 121, "end": 180 }, "rate": 7.14 },
+        { "months": { "start": 181, "end": 240 }, "rate": 7.12 }
+      ]
+    },
+    {
+      "code": "RB",
+      "name": "Raiffeisen Bank",
+      "interestNorms": [
+        { "months": { "start": 241, "end": 360 }, "rate": 4.04 }
+      ]
+    },
+    {
+      "code": "TB",
+      "name": "Tirana Bank",
+      "interestNorms": [
+        { "months": { "start": 241, "end": 360 }, "rate": 8.91 }
+      ]
+    },
+    {
+      "code": "UB",
+      "name": "Union Bank",
+      "interestNorms": [
+        { "months": { "start": 0, "end": 12 }, "rate": 6.78 },
+        { "months": { "start": 13, "end": 24 }, "rate": 5.87 },
+        { "months": { "start": 25, "end": 36 }, "rate": 5.54 },
+        { "months": { "start": 37, "end": 48 }, "rate": 5.36 },
+        { "months": { "start": 49, "end": 60 }, "rate": 5.26 },
+        { "months": { "start": 61, "end": 72 }, "rate": 5.18 },
+        { "months": { "start": 73, "end": 84 }, "rate": 5.13 },
+        { "months": { "start": 85, "end": 96 }, "rate": 5.09 },
+        { "months": { "start": 97, "end": 108 }, "rate": 5.05 },
+        { "months": { "start": 109, "end": 120 }, "rate": 5.02 },
+        { "months": { "start": 121, "end": 180 }, "rate": 4.93 },
+        { "months": { "start": 181, "end": 240 }, "rate": 4.87 },
+        { "months": { "start": 241, "end": 360 }, "rate": 4.80 }
+      ]
+    },
+    {
+      "code": "UBA",
+      "name": "United Bank of Albania",
+      "interestNorms": [
+        { "months": { "start": 0, "end": 12 }, "rate": 7.11 },
+        { "months": { "start": 13, "end": 24 }, "rate": 6.16 },
+        { "months": { "start": 25, "end": 36 }, "rate": 5.95 },
+        { "months": { "start": 37, "end": 48 }, "rate": 5.92 },
+        { "months": { "start": 49, "end": 60 }, "rate": 5.93 },
+        { "months": { "start": 61, "end": 72 }, "rate": 5.94 },
+        { "months": { "start": 73, "end": 84 }, "rate": 5.96 },
+        { "months": { "start": 85, "end": 96 }, "rate": 5.98 },
+        { "months": { "start": 97, "end": 108 }, "rate": 5.99 },
+        { "months": { "start": 109, "end": 120 }, "rate": 6.00 },
+        { "months": { "start": 121, "end": 180 }, "rate": 6.04 },
+        { "months": { "start": 181, "end": 240 }, "rate": 6.07 },
+        { "months": { "start": 241, "end": 360 }, "rate": 3.86 }
+      ]
+    }
+  ]
+}

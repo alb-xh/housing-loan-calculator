@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Kalkulatori i Kredive për Banesa | Shqipëri",
     description: "Përdor kalkulatorin tonë për të llogaritur kreditë për banesa me normat e interesit të përditësuara çdo ditë.",
     url: "https://www.llogaritkredi.al",
-    siteName: "llogaritkredi.al",
+    siteName: "www.llogaritkredi.al",
     images: [ "https://www.llogaritkredi.al/logo.png" ],
     locale: "sq_AL",
     type: "website",

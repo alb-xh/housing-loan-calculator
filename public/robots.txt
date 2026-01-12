@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /api/
 
-Sitemap: https://llogaritkredi.al/sitemap.xml
+Sitemap: https://www.llogaritkredi.al/sitemap.xml

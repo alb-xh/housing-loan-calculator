@@ -22,7 +22,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="flex w-full justify-center items-center m-4">
+      <div className="flex w-full justify-center items-center">
         <Banks banks={data.banks} />
       </div>
       {isProd && <UnderConstructionDialog />}

@@ -36,7 +36,7 @@ export function Banks({ banks }: Props) {
 
   return (
     <div className="flex flex-col items-center">
-      {!ready && <Progress className="w-sm mt-10" value={progress} />}
+      {!ready && <Progress className="w-3xs md:w-sm mt-10" value={progress} />}
       <Carousel
         opts={{ align: 'end', startIndex: Math.ceil(banks.length / 4) }}
         className={cn(
@@ -44,12 +44,12 @@ export function Banks({ banks }: Props) {
           ready ? "opacity-100" : "opacity-0"
         )}
       >
-        <CarouselContent className="py-10 mx-4">
+        <CarouselContent className="py-10 mx-2">
           {banks.map(({ code }) => (
             <CarouselItem 
               key={code} 
               className={cn(
-                  "lg:basis-1/6",
+                  "basis-1/3 md:basis-1/6",
                   bank === code ? 'opacity-100' : 'opacity-70 hover:opacity-90',
               )}
               onClick={() => setBank(code)}

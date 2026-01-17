@@ -59,7 +59,7 @@ export function CurrencyMenuItem ({ cur, children }: PropsWithChildren<{ cur: Cu
   
   return (
     <DropdownMenuItem 
-      className={cn("flex justify-center", isActive ? ' opacity-50 hover:opacity-100' : '')}
+      className={cn("flex justify-center", isActive && ' opacity-50 hover:opacity-100')}
       onSelect={handleOnSelect}
     >
       {children}
@@ -99,7 +99,7 @@ export function LanguageMenuItem ({ lang, children }: PropsWithChildren<{ lang: 
   
   return (
     <DropdownMenuItem 
-      className={`flex justify-center${!isActive && ' opacity-50 hover:opacity-100'}`}
+      className={cn('flex justify-center', !isActive && 'opacity-50 hover:opacity-100')}
       onSelect={handleOnSelect}
     >
       {children}

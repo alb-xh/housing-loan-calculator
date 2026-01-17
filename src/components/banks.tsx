@@ -20,28 +20,25 @@ type Props = {
 
 export function Banks({ banks }: Props) {
   const { bank,  setBank } = useBank();
-  const [loaded, setLoaded] = useState(0);
+  const [loaded, setLoaded] = useState<string[]>([]);
+  const handleDone = (code: string) => setLoaded((prev) => [ ...new Set(prev.concat(code)) ]);
 
-  const handleDone = (
-    e: React.SyntheticEvent<HTMLImageElement>
-  ) => {
-    if (!e.currentTarget.dataset.done) {
-      e.currentTarget.dataset.done = "true";
-      setLoaded(c => c + 1);
-    }
-  };
-
-  const ready = loaded === banks.length;
-  const progress = !ready ? Math.round(loaded / banks.length) * 100 : null;
+  const ready = loaded.length === banks.length;
+  const progress = !ready ? Math.round(loaded.length / banks.length * 100) : undefined;
 
   return (
-    <div className="flex flex-col items-center">
-      {!ready && <Progress className="w-3xs md:w-sm mt-10" value={progress} />}
+    <div className="flex flex-col items-center w-full">
+      {!ready && (
+        <Progress 
+          className="w-3xs md:w-sm mt-10"
+          value={progress} 
+        />
+      )}
       <Carousel
-        opts={{ align: 'end', startIndex: Math.ceil(banks.length / 4) }}
+        opts={{ align: 'start', startIndex: Math.ceil(banks.length / 4) }}
         className={cn(
-          "w-full flex max-w-1/2", 
-          ready ? "opacity-100" : "opacity-0"
+          "w-full flex max-w-3/5 md:max-w-1/2", 
+          ready ? "opacity-100" : "opacity-0",
         )}
       >
         <CarouselContent className="py-10 mx-2">
@@ -61,15 +58,16 @@ export function Banks({ banks }: Props) {
                   )}
                 > 
                   <CardContent className="flex flex-col justify-between p-0 h-full">
-                    <div className="w-full h-full flex justify-center items center p-1 bg-accent-foreground">
+                    <div className="w-full h-full flex justify-center items-center p-1 bg-accent-foreground">
                       <Image 
-                        className="flex select-none pointer-events-none w-full object-contain " 
-                        src={images[code]} 
+                        className="flex select-none pointer-events-none w-full object-contain" 
+                        src={images[code] || ""} 
                         alt={`${code} logo`} 
                         width={100}
                         height={100}
-                        onLoad={handleDone}
-                        onError={handleDone}
+                        loading="eager"
+                        onLoad={() => handleDone(code)}
+                        onError={() => handleDone(code)}
                       />
                     </div>
                     <div className="w-full flex justify-center items center bg-red-950 font-mono text-sm select-none pointer-events-none py-0.5 text-secondary dark:text-primary">{code}</div>

@@ -18,6 +18,7 @@ import { ComponentProps, PropsWithChildren } from "react";
 import type { Language } from "@/contexts/language-context";
 import type { Currency } from "@/contexts/currency-context";
 import { useCurrency } from "@/hooks/use-currency";
+import { cn } from "@/lib/utils";
 
 function Logo () {
   return (
@@ -58,7 +59,7 @@ export function CurrencyMenuItem ({ cur, children }: PropsWithChildren<{ cur: Cu
   
   return (
     <DropdownMenuItem 
-      className={`flex justify-center${!isActive && ' opacity-50 hover:opacity-100'}`}
+      className={cn("flex justify-center", isActive ? ' opacity-50 hover:opacity-100' : '')}
       onSelect={handleOnSelect}
     >
       {children}

@@ -5,6 +5,7 @@ import { UnderConstructionDialog } from "@/components/under-construction-dialog"
 import { db } from '@/lib/db';
 import { scrape } from "@/lib/scraper";
 import { stateful } from "@/lib/utils";
+import { Banks } from "@/components/banks";
 
 const DAY = 24 * 60 * 60 * 1000;
 const scraper = stateful(scrape);
@@ -21,6 +22,9 @@ export default async function Home() {
 
   return (
     <>
+      <div className="flex w-full justify-center items-center m-4">
+        <Banks banks={data.banks} />
+      </div>
       {isProd && <UnderConstructionDialog />}
     </>
   );

@@ -6,11 +6,13 @@ import { LanguageContext } from "@/contexts/language-context";
 import { DEFAULT_LANGUAGE } from "@/langs";
 import { getDefaultTheme } from "@/theme";
 import { CurrencyContext, DEFAULT_CURRENCY } from "@/contexts/currency-context";
+import { BankContext } from "@/contexts/bank-context";
 
 export function Provider ({ children }: PropsWithChildren) {
   const [theme, setTheme] = useState(getDefaultTheme());
   const [language, setLanguage] = useState(DEFAULT_LANGUAGE);
   const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
+  const [bank, setBank] = useState("");
 
   useEffect(() => {
     const classList = document.documentElement.classList;
@@ -23,7 +25,9 @@ export function Provider ({ children }: PropsWithChildren) {
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <LanguageContext.Provider value={{ language, setLanguage }}>
         <CurrencyContext.Provider value={{ currency, setCurrency }}>
-          {children}
+          <BankContext.Provider value={{ bank, setBank }}>
+            {children}
+          </BankContext.Provider>
         </CurrencyContext.Provider>
       </LanguageContext.Provider>
     </ThemeContext.Provider>

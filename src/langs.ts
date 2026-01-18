@@ -2,8 +2,9 @@ import type { Language } from "./contexts/language-context";
 
 export type LanguageContent = {
   title: string;
-  banks: {
-    select: string;
+  select: {
+    bank: string;
+    year: string;
   };
   underConstruction: {
     message: string;
@@ -14,8 +15,9 @@ export const DEFAULT_LANGUAGE: Language = "al";
 
 export const al: LanguageContent = {
   title: "Kalkulatori i Kredive për Banesa",
-  banks: {
-    select: "Zgjidh bankën",
+  select: {
+    bank: "Zgjidh bankën",
+    year: "Zgjidh vitet",
   },
   underConstruction: {
     message: "Nën zhvillim",
@@ -24,8 +26,9 @@ export const al: LanguageContent = {
 
 export const en: LanguageContent = {
   title: "Home Loan Calculator",
-  banks: {
-    select: "Select bank",
+  select: {
+    bank: "Select bank",
+    year: "Select year",
   },
   underConstruction: {
     message: "Under construction",

@@ -1,8 +1,11 @@
-import { createContext } from 'react';
+import { BankDataSchema } from "@/lib/db";
+import { createContext } from "react";
 
 export type BankContextValue = {
-  bank: string, 
-  setBank: (bank: string) => void
+  bank: BankDataSchema | null;
+  setBank: (bank: BankDataSchema) => void;
 };
 
-export const BankContext = createContext<BankContextValue>({} as BankContextValue);
+export const BankContext = createContext<BankContextValue>(
+  {} as BankContextValue,
+);

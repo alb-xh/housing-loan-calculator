@@ -7,18 +7,19 @@ import { DEFAULT_LANGUAGE } from "@/langs";
 import { getDefaultTheme } from "@/theme";
 import { CurrencyContext, DEFAULT_CURRENCY } from "@/contexts/currency-context";
 import { BankContext } from "@/contexts/bank-context";
+import { BankDataSchema } from "@/lib/db";
 
-export function Provider ({ children }: PropsWithChildren) {
+export function Provider({ children }: PropsWithChildren) {
   const [theme, setTheme] = useState(getDefaultTheme());
   const [language, setLanguage] = useState(DEFAULT_LANGUAGE);
   const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
-  const [bank, setBank] = useState("");
+  const [bank, setBank] = useState<BankDataSchema | null>(null);
 
   useEffect(() => {
     const classList = document.documentElement.classList;
 
-    if (theme === 'dark') classList.add('dark');
-    else classList.remove('dark');
+    if (theme === "dark") classList.add("dark");
+    else classList.remove("dark");
   }, [theme]);
 
   return (
@@ -32,4 +33,4 @@ export function Provider ({ children }: PropsWithChildren) {
       </LanguageContext.Provider>
     </ThemeContext.Provider>
   );
-};
+}

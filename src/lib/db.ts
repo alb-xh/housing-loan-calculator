@@ -1,17 +1,19 @@
 import fs from "fs/promises";
 
+export type InterestNormDataSchema = {
+  months: { start: number; end: number };
+  rate: number;
+};
+
 export type BankDataSchema = {
   code: string;
   name: string;
-  interestNorms: {
-    months: { start: number; end: number };
-    rate: number;
-  };
+  interestNorms: InterestNormDataSchema[];
 };
 
 export type DataSchema = {
   updatedAt: string;
-  banks: Array<BankDataSchema>;
+  banks: BankDataSchema[];
 };
 
 const DB_PATH = "./src/data/db.json";

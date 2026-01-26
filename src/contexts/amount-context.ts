@@ -1,8 +1,10 @@
 import { createContext } from "react";
 
+export const DEFAULT_AMOUNT = 100000;
+
 export type AmountContextValue = {
-  amount: number | null;
-  setAmount: (setAmount: number | null) => void;
+  amount: number;
+  setAmount: (setAmount: number) => void;
 };
 
 export const AmountContext = createContext<AmountContextValue>(

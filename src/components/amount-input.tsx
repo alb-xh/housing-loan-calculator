@@ -11,10 +11,10 @@ import { Calculator } from "lucide-react";
 import { useYears } from "@/hooks/use-years";
 
 export function AmountInput() {
-  const [value, setValue] = useState<number | null>(null);
+  const { amount, setAmount } = useAmount();
+  const [value, setValue] = useState<number>(amount);
   const t = useTranslation();
   const { years } = useYears();
-  const { amount, setAmount } = useAmount();
 
   return (
     <div className={cn("flex flex-col items-center w-full pt-6", years ? 'opacity-100' : 'opacity-80')}>
@@ -31,12 +31,12 @@ export function AmountInput() {
           disabled={!years}
           onChange={(e) => {
             const nr = Number(e.target.value);
-            if (Number.isInteger(nr) && nr > 0) setValue(nr);
+            if (Number.isInteger(nr) && nr > 0 && nr <= Math.pow(10, 9)) setValue(nr);
           }}
         />
         <Button 
           className="flex justify-center bg-accent text-foreground transition hover:text-secondary items-center gap-0.5 font-mono"
-          disabled={!years || ((value || 0) <= 0)}
+          disabled={((value || 0) <= 0)}
           onClick={() => setAmount(value)}
         >
           <Calculator />{t("amount.button.message")}

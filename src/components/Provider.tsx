@@ -8,16 +8,16 @@ import { getDefaultTheme } from "@/theme";
 import { CurrencyContext, DEFAULT_CURRENCY } from "@/contexts/currency-context";
 import { BankContext } from "@/contexts/bank-context";
 import { BankDataSchema } from "@/lib/db";
-import { AmountContext } from "@/contexts/amount-context";
-import { YearsContext } from "@/contexts/years-context";
+import { AmountContext, DEFAULT_AMOUNT } from "@/contexts/amount-context";
+import { DEFAULT_YEARS, YearsContext } from "@/contexts/years-context";
 
 export function Provider({ children }: PropsWithChildren) {
   const [theme, setTheme] = useState(getDefaultTheme());
   const [language, setLanguage] = useState(DEFAULT_LANGUAGE);
   const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
   const [bank, setBank] = useState<BankDataSchema | null>(null);
-  const [years, setYears] = useState<number | null>(null);
-  const [amount, setAmount] = useState<number | null>(null);
+  const [years, setYears] = useState<number>(DEFAULT_YEARS);
+  const [amount, setAmount] = useState<number>(DEFAULT_AMOUNT);
 
   useEffect(() => {
     const classList = document.documentElement.classList;

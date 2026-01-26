@@ -29,24 +29,22 @@ export function LoanYearsSelector() {
   );
 
   useEffect(() => {
-    if (!max) return;
-    if (!years) return setYears(Math.min(max, 20));
-    setYears(Math.min(years, max));
+    if (max) setYears(Math.min(years, max));
   }, [ max, years, setYears ]);
 
   return (
     <div className={cn("flex flex-col items-center w-full gap-6", bank ? 'opacity-100' : 'opacity-80')}>
       <div className="w-10/12 md:w-3/5 font-mono text-sm flex justify-between">
         <span>{t("select.year")}</span>
-        <span className="font-bold text-md pr-[10%]">{years}</span>
+        <span className="font-bold text-md pr-[10%]">{bank ? years: ''}</span>
       </div>
       <Slider
         className="w-4/5 md:w-1/2"
         min={1}
         step={1}
         max={max}
-        disabled={!bank || !years}
-        value={[ years ?? 1 ]}
+        disabled={!bank}
+        value={[ years ]}
         onValueChange={([ value ]) => setYears(value)}
       />
     </div>

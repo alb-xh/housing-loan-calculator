@@ -5,7 +5,13 @@ export type LanguageContent = {
   select: {
     bank: string;
     year: string;
+    amount: string,
   };
+  amount: {
+    button: {
+      message: string,
+    },
+  },
   underConstruction: {
     message: string;
   };
@@ -18,6 +24,12 @@ export const al: LanguageContent = {
   select: {
     bank: "Zgjidh bankën",
     year: "Zgjidh vitet",
+    amount: "Shto shumën",
+  },
+  amount: {
+    button: { 
+      message: "Llogarit"
+    }
   },
   underConstruction: {
     message: "Nën zhvillim",
@@ -29,6 +41,12 @@ export const en: LanguageContent = {
   select: {
     bank: "Select bank",
     year: "Select year",
+    amount: "Add amount",
+  },
+  amount: {
+    button: { 
+      message: "Calculate",
+    }
   },
   underConstruction: {
     message: "Under construction",

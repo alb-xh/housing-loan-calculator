@@ -35,10 +35,10 @@ export function BankSelector({ banks }: Props) {
 
   return (
     <div className="flex flex-col items-center w-full gap-1 pt-4">
-      {!ready && <Progress className="w-3xs md:w-sm" value={progress} />}
       <div className="w-10/12 md:w-3/5 font-mono text-sm">
         {t("select.bank")}
       </div>
+      {!ready && <Progress className="w-4/5 md:w-1/2 mt-2" value={progress} />}
       <Carousel
         opts={{ align: "start", startIndex: Math.ceil(banks.length / 4) }}
         className={cn(
